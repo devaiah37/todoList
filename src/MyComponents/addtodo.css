@@ -1,0 +1,43 @@
+.contain
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title > input
+{
+width: 700px;
+height: 25px;
+border: 2px solid black;
+margin: 10px;
+}
+.desc > input
+{
+    width: 700px;
+    height: 25px;
+    border: 2px solid black;
+    margin: 15px;
+}
+.title > label >p{
+    height: fit-content;
+    width: fit-content;
+    margin-left: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.desc > label > p{
+    height: fit-content;
+    width: fit-content;
+    margin-left: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+    /* margin-top: 10px; */
+}
+.todosub
+{
+height: 35px;
+width: fit-content;
+margin: 10px;
+background-color: skyblue;
+border-radius: 4px;
+
+}

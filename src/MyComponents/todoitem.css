@@ -1,0 +1,18 @@
+.display{
+   
+    border: 1px solid red;
+    padding: 10px;
+    margin: 20px;
+    height: fit-content;
+    width: 300px;
+    display: inline-block;
+   
+
+}
+.btn1
+{
+    background-color: lightskyblue;
+    border-radius: 4px;
+    height: 30px;
+    width: fit-content;
+}

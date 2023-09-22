@@ -2,16 +2,23 @@ import  Header  from "./MyComponents/Header";
 import React from 'react';
 import Footer from "./MyComponents/Footer";
 import Todos  from "./MyComponents/Todos";
-// import Todo from "./MyComponents/Todo";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from "./MyComponents/Home";
 import { useState } from "react";
 import AddTodo from "./MyComponents/AddTodo";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Contact from "./MyComponents/Contact";
+
+
 
 
 function App() {
   const OnDelete = (todo)=>
 {
-console.log("Todo is deleted" , todo)
+// console.log("Todo is deleted" , todo)
 SetList(list.filter((e)=>
 {
 return e!==todo;
@@ -20,12 +27,12 @@ return e!==todo;
 }
 const addTodo = (title,desc)=>
 {
-console.log("Adding Todo" ,title, desc)
+// console.log("Adding Todo" ,title, desc)
 let slno;
 if(list.length==0)
 {
   <p>No Todos to display</p>
-  slno=0
+  slno=0;
 }
 else
 {
@@ -38,7 +45,7 @@ title: title,
 desc: desc
 }
 // console.log(newTodo)
-SetList([...list ,newTodo])
+SetList([...list ,newTodo]) //spread operator : allows iterables to expand if there are more than one arguments
 }
 const [list, SetList] = useState([
   {
@@ -59,12 +66,20 @@ const [list, SetList] = useState([
 ]);
 
   return (
-    <>
-     <Header/>
-     <AddTodo addTodo={addTodo}/>
-     <Todos list={list} OnDelete={OnDelete}/>
-     <Footer/>
-     </>
+    <BrowserRouter>
+              <Header/>
+          
+    <Routes>
+            
+           <Route path="/" element={<Home/>}/>
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="/addtodo" element={ <AddTodo addTodo={addTodo}/>} />
+        <Route path="/MyTodoList" element={<Todos list={list} OnDelete={OnDelete}/>}/> 
+           
+            </Routes>
+            <Footer/>
+            </BrowserRouter>
   );
 }
 export default App;
+           

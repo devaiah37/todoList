@@ -1,8 +1,9 @@
 import React from 'react'
 import './todoitem.css';
-const TodoItem = ({todo, OnDelete}) => {
+const TodoItem = ({todo, OnDelete,}) => {
   return (
-    <div className='display'>  
+    <div className='display'> 
+      <p>{todo.slno}</p>
       <h3>{todo.title}</h3>
       <p>{todo.desc}</p>
       <button className='btn1' onClick={()=>{OnDelete(todo)}}> DELETE</button>

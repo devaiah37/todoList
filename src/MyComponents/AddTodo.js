@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './addtodo.css';
+import { Link } from 'react-router-dom';
 
-const AddTodo = ({addTodo}) => {
+const AddTodo = ({addTodo,navigation}) => {
     const [title, SetTitle] = useState("")
     const [desc, SetDesc] = useState("")
     const submit =(e)=>
@@ -17,14 +18,14 @@ alert("Title and description can't be empty")
     <div className='contain'>
        <form onSubmit={submit}>
   <div className="title">
-    <label htmlFor="exampleInputEmail1" className=""><p>TODO TITLE</p></label>
-    <input type="text" className="" value={title} onChange={(e)=>{SetTitle(e.target.value)}} id="exampleInputEmail1" aria-describedby="emailHelp"/>
+    <label ><p>TODO TITLE</p></label>
+    <input type="text"  value={title} onChange={(e)=>{SetTitle(e.target.value)}} />
   </div>
   <div className="desc">
-    <label htmlFor="exampleInputPassword1" className=""><p>TODO DESCRIPTION</p></label>
-    <input type="text" className="" value={desc} onChange={(e)=>{SetDesc(e.target.value)}} id="exampleInputPassword1"/>
+    <label  ><p>TODO DESCRIPTION</p></label>
+    <input type="text" value={desc} onChange={(e)=>{SetDesc(e.target.value)}} />
   </div>
-  <button type="submit" className="todosub">ADD TODO</button>
+  <button type="submit" className="todosub" onPress={() => navigation.push('MyTodoList')}>ADD TODO</button>
 </form>
     </div>
   )

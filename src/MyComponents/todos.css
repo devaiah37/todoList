@@ -12,3 +12,7 @@
     padding: 25px;
     margin: 20px;
 }
+.container > h1{
+  margin-left: 55px;
+  color: lightskyblue;
+}

@@ -1,0 +1,23 @@
+.home
+{
+
+   
+    position: relative;
+    left: 700px;
+    top: 200px;
+
+
+}
+.home  h2
+{
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    border: 3px solid lightskyblue;
+    border-radius: 50%;
+    background-color:  whitesmoke;
+   
+}
